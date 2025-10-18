@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Ana Səhifə", href: "/" },
   { name: "Xidmətlər", href: "/xidmetler" },
   { name: "Haqqımda", href: "/haqqimda" },
-  { name: "Bloq", href: "/bloq" },
+  { name: "Bloq", href: "/blog" },
 ];
 
 const Navbar: React.FC = () => {
