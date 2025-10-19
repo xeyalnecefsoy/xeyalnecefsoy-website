@@ -81,7 +81,7 @@ export default function HuquqBiznesLanding() {
             />
             <textarea
               placeholder="Mesajınız"
-              rows="5"
+              rows={5}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900"
             ></textarea>
             <button className="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-blue-950 transition">
