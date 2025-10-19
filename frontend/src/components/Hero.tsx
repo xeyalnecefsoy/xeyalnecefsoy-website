@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
   Cloud,
@@ -24,11 +23,7 @@ const Hero: React.FC<HeroSectionProps> = ({
   onConsultationClick,
 }) => {
   return (
-    <div
-      className="relative min-h-screen 
-    bg-[#0A2472]
-     overflow-hidden"
-    >
+    <div className="relative min-h-screen bg-[#0A2472] overflow-hidden">
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
@@ -47,7 +42,6 @@ const Hero: React.FC<HeroSectionProps> = ({
                 dəstək təqdim edirik.
               </p>
             </div>
-
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
@@ -64,17 +58,12 @@ const Hero: React.FC<HeroSectionProps> = ({
               </button>
             </div>
           </div>
-
           {/* Right Section - 3D Isometric Illustration */}
           <div className="relative h-full flex items-center justify-center">
-            <Image
-              src={HeroIllustration} // Şəkil faylının yolunu dəyişin
-              alt="Hero Section 3D Illustration"
-            />
+            <Image src={HeroIllustration} alt="Hero Section 3D Illustration" />
           </div>
         </div>
       </div>
-
       {/* CSS for animations */}
       <style jsx>{`
         @keyframes blob {
@@ -89,7 +78,6 @@ const Hero: React.FC<HeroSectionProps> = ({
             transform: translate(-20px, 20px) scale(0.9);
           }
         }
-
         @keyframes float {
           0%,
           100% {
@@ -99,23 +87,18 @@ const Hero: React.FC<HeroSectionProps> = ({
             transform: translateY(-20px);
           }
         }
-
         .animate-blob {
           animation: blob 7s infinite;
         }
-
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
-
         .animation-delay-2000 {
           animation-delay: 2s;
         }
-
         .animation-delay-4000 {
           animation-delay: 4s;
         }
-
         .perspective {
           perspective: 1000px;
         }
