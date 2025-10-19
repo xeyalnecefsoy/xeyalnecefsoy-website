@@ -10,6 +10,7 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 interface Service {
   id: number;
@@ -127,6 +128,9 @@ export default function XidmetlerPage() {
 
   return (
     <div className="w-full bg-white">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-24 px-4 sm:px-6 lg:px-8">
         <div className="relative max-w-6xl mx-auto text-center">
