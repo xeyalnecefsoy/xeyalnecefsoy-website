@@ -5,6 +5,7 @@ import Image from "next/image";
 import SkillCard from "./SkillCard";
 // Lucide ikonları (siz başqa ikon dəstləri də istifadə edə bilərsiniz)
 import { Code, Server, PenTool, Search, Share2, Layout } from "lucide-react";
+import Photo from "../../public/images/xeyal-necefsoy.jpg";
 
 const AboutSection: React.FC = () => {
   // Bacarıq məlumatlarının massivi
@@ -50,7 +51,7 @@ const AboutSection: React.FC = () => {
             {/* Şəklinizin rəng effektlərini dəstəkləmək üçün xüsusi bir CSS sinifi istifadə olunur */}
             <div className="w-56 h-56 md:w-64 md:h-64 rounded-xl overflow-hidden relative shadow-xl">
               <Image
-                src="/images/xeyal-necefsoy.jpg" // Şəkil faylının yolunu dəyişin
+                src={Photo} // Şəkil faylının yolunu dəyişin
                 alt="Xəyal Nəcəfsoy portret şəkli"
                 fill
                 style={{ objectFit: "cover" }}
