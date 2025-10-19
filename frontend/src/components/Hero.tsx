@@ -11,6 +11,8 @@ import {
   Settings,
   Wifi,
 } from "lucide-react";
+import Image from "next/image";
+import HeroIllustration from "../../public/images/hero-illustration.webp";
 
 interface HeroSectionProps {
   onContactClick?: () => void;
@@ -22,14 +24,11 @@ const Hero: React.FC<HeroSectionProps> = ({
   onConsultationClick,
 }) => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-purple-600 overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
+    <div
+      className="relative min-h-screen 
+    bg-[#0A2472]
+     overflow-hidden"
+    >
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
@@ -68,82 +67,10 @@ const Hero: React.FC<HeroSectionProps> = ({
 
           {/* Right Section - 3D Isometric Illustration */}
           <div className="relative h-full flex items-center justify-center">
-            {/* Central cube with glow */}
-            <div className="relative w-64 h-64 perspective">
-              {/* Animated central cube */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div
-                  className="relative w-48 h-48 animate-spin"
-                  style={{ animationDuration: "20s" }}
-                >
-                  {/* Cube faces */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl shadow-2xl transform -rotate-45 opacity-80"></div>
-                </div>
-
-                {/* Central icon - 3 stacked layers */}
-                <div
-                  className="absolute z-10 text-blue-300 text-6xl font-bold animate-bounce"
-                  style={{ animationDuration: "2s" }}
-                >
-                  ⚡
-                </div>
-              </div>
-
-              {/* Orbiting elements */}
-              <div className="absolute inset-0">
-                {/* Database */}
-                <div className="absolute top-0 right-8 animate-pulse">
-                  <Database className="w-12 h-12 text-blue-300" />
-                </div>
-
-                {/* Cloud */}
-                <div className="absolute top-12 left-4 animate-float">
-                  <Cloud className="w-10 h-10 text-blue-200" />
-                </div>
-
-                {/* Lock/Security */}
-                <div
-                  className="absolute bottom-8 right-4 animate-pulse"
-                  style={{ animationDelay: "0.5s" }}
-                >
-                  <Lock className="w-12 h-12 text-purple-300" />
-                </div>
-
-                {/* Globe */}
-                <div className="absolute bottom-16 left-8">
-                  <Globe
-                    className="w-14 h-14 text-cyan-300 animate-spin"
-                    style={{ animationDuration: "8s" }}
-                  />
-                </div>
-
-                {/* Settings */}
-                <div
-                  className="absolute top-1/2 right-0 animate-spin"
-                  style={{ animationDuration: "4s" }}
-                >
-                  <Settings className="w-12 h-12 text-orange-400" />
-                </div>
-
-                {/* Server/Laptop */}
-                <div
-                  className="absolute bottom-0 left-1/4 animate-bounce"
-                  style={{ animationDuration: "3s" }}
-                >
-                  <Server className="w-11 h-11 text-blue-300" />
-                </div>
-
-                {/* Wifi */}
-                <div className="absolute top-1/3 left-0 animate-pulse">
-                  <Wifi className="w-10 h-10 text-cyan-300" />
-                </div>
-              </div>
-            </div>
-
-            {/* Floating cards background */}
-            <div className="absolute top-8 right-12 opacity-70 animate-float">
-              <div className="w-24 h-16 bg-white/10 backdrop-blur rounded-lg border border-white/20"></div>
-            </div>
+            <Image
+              src={HeroIllustration} // Şəkil faylının yolunu dəyişin
+              alt="Hero Section 3D Illustration"
+            />
           </div>
         </div>
       </div>
