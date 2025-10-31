@@ -1,25 +1,22 @@
 // src/app/[lang]/layout.tsx
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default async function LocaleLayout({
   children,
-  params, // params propunu qəbul edirik
+  params,
 }: {
   children: React.ReactNode;
-  params: { lang: string }; // lang parametrinə çıxış əldə edirik
+  params: Promise<{ lang: string }>; // Promise əlavə edin
 }) {
-  const { lang } = params;
+  const { lang } = await params; // params-ı await edin
 
   return (
     <>
-      {/* 1. HTML lang atributunu dinamik olaraq təyin edin */}
       <html lang={lang}>
         <body>
-          {/* 2. Navbar və Footer-i lang propu ilə ötürün */}
           <Navbar lang={lang} />
-          <main>{children}</main> {/* Əsas səhifə məzmunu */}
+          <main>{children}</main>
           <Footer lang={lang} />
         </body>
       </html>
