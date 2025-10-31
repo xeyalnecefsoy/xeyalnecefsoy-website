@@ -6,8 +6,8 @@ import HeroSection from "@/components/HuquqBiznesi/HeroSection";
 import Services from "@/components/HuquqBiznesi/Services";
 import ProjectsSlider from "@/components/HuquqBiznesi/ProjectsSlider";
 import Elevation from "@/components/HuquqBiznesi/Elevation";
-import AboutSection from "@/components/About";
 import BlogSection from "@/components/HuquqBiznesi/BlogSection";
+import About from "@/components/About";
 
 export default function HuquqBiznesLanding() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,7 +56,7 @@ export default function HuquqBiznesLanding() {
       <Elevation />
 
       {/* Haqqımda Section */}
-      <AboutSection />
+      {/* <About/> */}
 
       {/* Blog Section */}
       <BlogSection />

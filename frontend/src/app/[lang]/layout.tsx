@@ -3,26 +3,20 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default async function LocaleLayout({
-  children,
-  params, // params propunu qəbul edirik
-}: {
+export default async function LocaleLayout(props: {
   children: React.ReactNode;
-  params: { lang: string }; // lang parametrinə çıxış əldə edirik
+  params: Promise<{ lang: string }>; // ✅ Promise olaraq təyin edirik
 }) {
-  const { lang } = params;
+  // ✅ params-ı await edirik
+  const { lang } = await props.params;
 
   return (
-    <>
-      {/* 1. HTML lang atributunu dinamik olaraq təyin edin */}
-      <html lang={lang}>
-        <body>
-          {/* 2. Navbar və Footer-i lang propu ilə ötürün */}
-          <Navbar lang={lang} />
-          <main>{children}</main> {/* Əsas səhifə məzmunu */}
-          <Footer lang={lang} />
-        </body>
-      </html>
-    </>
+    <html lang={lang}>
+      <body>
+        <Navbar lang={lang} />
+        <main>{props.children}</main>
+        <Footer lang={lang} />
+      </body>
+    </html>
   );
 }
