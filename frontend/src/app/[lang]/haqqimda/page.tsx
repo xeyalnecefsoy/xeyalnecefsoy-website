@@ -43,9 +43,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
-      {/* Navbar */}
-      <Navbar />
-
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
