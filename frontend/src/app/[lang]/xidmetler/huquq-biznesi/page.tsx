@@ -8,7 +8,6 @@ import ProjectsSlider from "@/components/HuquqBiznesi/ProjectsSlider";
 import Elevation from "@/components/HuquqBiznesi/Elevation";
 import AboutSection from "@/components/About";
 import BlogSection from "@/components/HuquqBiznesi/BlogSection";
-import Navbar from "@/components/Navbar";
 
 export default function HuquqBiznesLanding() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,9 +43,6 @@ export default function HuquqBiznesLanding() {
 
   return (
     <div className="w-full bg-white">
-      {/* Navbar */}
-      <Navbar />
-
       {/* Hero Section */}
       <HeroSection />
 

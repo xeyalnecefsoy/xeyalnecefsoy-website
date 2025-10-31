@@ -7,21 +7,38 @@ import Link from "next/link";
 // İkonlar üçün lucide-react istifadə olunur
 import { Sun, Moon, Menu, X, Globe, ChevronDown } from "lucide-react";
 
-// Navigasiya linkləri
-const navLinks = [
-  { name: "Ana Səhifə", href: "/" },
-  { name: "Xidmətlər", href: "/xidmetler", hasDropdown: true },
-  { name: "Haqqımda", href: "/haqqimda" },
-  { name: "Bloq", href: "/blog" },
-];
+// Cari marşrutu (path)-ı almaq üçün Next.js hook-u istifadə etməliyik (usePathname)
+import { usePathname } from "next/navigation";
 
-// Xidmətlər dropdown linkləri
-const servicesDropdown = [
-  { name: "Hüquq Biznesi", href: "/xidmetler/huquq-biznesi" },
-  { name: "Bütün Xidmətlər", href: "/xidmetler" },
-];
+// 1. NavbarProps interfeysini yaradırıq
+interface NavbarProps {
+  lang: string; // [lang]/layout.tsx tərəfindən ötürülür
+}
 
-const Navbar: React.FC = () => {
+// Navigasiya linkləri (Aşağıda dinamik təyin edəcəyik, lakin interfeyslərini saxlayaq)
+interface NavLink {
+  name: string;
+  href: string;
+  hasDropdown?: boolean;
+}
+
+// ... (servicesDropdown və navLinks-i silirik, çünki onları komponent daxilində dinamik yaradacağıq 👇)
+
+// // Navigasiya linkləri
+// const navLinks = [
+//   { name: "Ana Səhifə", href: "/" },
+//   { name: "Xidmətlər", href: "/xidmetler", hasDropdown: true },
+//   { name: "Haqqımda", href: "/haqqimda" },
+//   { name: "Bloq", href: "/blog" },
+// ];
+
+// // Xidmətlər dropdown linkləri
+// const servicesDropdown = [
+//   { name: "Hüquq Biznesi", href: "/xidmetler/huquq-biznesi" },
+//   { name: "Bütün Xidmətlər", href: "/xidmetler" },
+// ];
+
+const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false); // Mobil menyu vəziyyəti
   const [isDarkMode, setIsDarkMode] = useState(false); // Tema vəziyyəti
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false); // Dropdown vəziyyəti (mobil)
@@ -42,6 +59,52 @@ const Navbar: React.FC = () => {
     setIsDarkMode(!isDarkMode);
     // Real tətbiqdə: document.documentElement.classList.toggle('dark');
   };
+
+  // Dil dəyişdirici
+  const targetLang = lang === "az" ? "en" : "az";
+  const pathname = usePathname(); // Cari URL-i alırıq
+  // URL-də dil seqmentini dəyişdirmək üçün funksiya
+  const getTargetHref = () => {
+    // Cari URL-dən (məsələn: /az/xidmetler) yalnız slug-ı alırıq (/xidmetler)
+    const slug = pathname.replace(`/${lang}`, "");
+    // Yeni dil seqmenti ilə birləşdiririk (məsələn: /en/services)
+    // **Qeyd:** Əgər marşrut adları dildən asılı olaraq dəyişirsə (xidmetler -> services),
+    // bu məntiq mürəkkəbləşməlidir. Lakin sadəlik üçün bu nümunəni veririk.
+    return `/${targetLang}${slug}`;
+  };
+
+  // Dil seçiminə uyğun link və mətnləri təyin edirik
+  const AZ_LINKS: NavLink[] = [
+    { name: "Ana Səhifə", href: "/az" },
+    { name: "Xidmətlər", href: "/az/xidmetler", hasDropdown: true },
+    { name: "Haqqımda", href: "/az/haqqimda" },
+    { name: "Bloq", href: "/az/blog" },
+  ];
+
+  const EN_LINKS: NavLink[] = [
+    { name: "Home", href: "/en" },
+    { name: "Services", href: "/en/services", hasDropdown: true },
+    { name: "About", href: "/en/about" },
+    { name: "Blog", href: "/en/blog" },
+  ];
+
+  const AZ_DROPDOWN: NavLink[] = [
+    { name: "Hüquq Biznesi", href: "/az/xidmetler/huquq-biznesi" },
+    { name: "Bütün Xidmətlər", href: "/az/xidmetler" },
+  ];
+
+  const EN_DROPDOWN: NavLink[] = [
+    { name: "Law Business", href: "/en/services/law-business" },
+    { name: "All Services", href: "/en/services" },
+  ];
+
+  // İstifadə olunacaq massivləri seçirik
+  const navLinks = lang === "az" ? AZ_LINKS : EN_LINKS;
+  const servicesDropdown = lang === "az" ? AZ_DROPDOWN : EN_DROPDOWN;
+
+  // Düymə Mətnləri
+  const contactButtonText =
+    lang === "az" ? "Vebsaytınızı Yaradın" : "Create Your Website";
 
   return (
     <nav className="border-t border-b border-gray-100 bg-white sticky top-0 z-50">
@@ -113,13 +176,17 @@ const Navbar: React.FC = () => {
               </button>
 
               {/* Dil Dəyişdirici */}
-              <button
-                className="p-2 rounded-full text-gray-600 hover:text-[#081a4b] transition duration-150 flex items-center space-x-1"
-                aria-label="Dil seçimi"
+              <Link
+                className="text-black"
+                href={getTargetHref()} // ✅ Dinamik link
+                // ... (digər atributlar)
               >
                 <Globe size={20} />
-                <span className="text-base font-medium">Az</span>
-              </button>
+                <span className="text-base font-medium uppercase">
+                  {targetLang}
+                </span>{" "}
+                {/* Əks dili göstər */}
+              </Link>
             </div>
 
             {/* Əsas Düymə */}

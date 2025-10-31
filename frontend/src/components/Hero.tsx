@@ -14,11 +14,16 @@ import Image from "next/image";
 import HeroIllustration from "../../public/images/hero-illustration.webp";
 
 interface HeroSectionProps {
+  // ✅ Yeni propu əlavə edirik:
+  lang: string;
+
   onContactClick?: () => void;
   onConsultationClick?: () => void;
 }
 
 const Hero: React.FC<HeroSectionProps> = ({
+  // ✅ Qəbul edilən propların arasına `lang` əlavə edilir:
+  lang,
   onContactClick,
   onConsultationClick,
 }) => {

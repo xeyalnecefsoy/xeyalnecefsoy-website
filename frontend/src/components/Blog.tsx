@@ -3,21 +3,32 @@ import { ArrowRight } from "lucide-react";
 
 // Komponent üçün TypeScript interfeysi
 interface BlogCTAProps {
-  title?: string;
-  description?: string;
-  buttonText?: string;
+  // ✅ Yalnız lang propunu saxlayırıq (xətanı aradan qaldırmaq üçün)
+  lang: string;
+
+  // title, description, buttonText proplarını silirik, çünki onları
+  // aşağıdakı kimi birbaşa komponentin içində tərcümə edəcəyik.
+  // buttonLink isə hər dil üçün fərqli ola bilər, onu saxlayırıq.
   buttonLink?: string;
 }
 
 const Blog: React.FC<BlogCTAProps> = ({
-  title = "BLOQ",
-  description = "Müxtəlif mövzulardakı yazılarıma nəzər yetir",
-  buttonText = "Yazıları Oxu",
+  // ✅ lang propunu proplardan çıxarırıq:
+  lang,
+
   buttonLink = "/blog",
 }) => {
   // Şəkildəki tünd göy və açıq göy rənglər üçün təxminlər
   const darkBlue = "#14365d"; // Başlıq və gradientin tünd hissəsi
   const lightBlue = "#3b82f6"; // Gradientin açıq hissəsi
+
+  // Tərcümə edilmiş mətnləri təyin edirik
+  const blogTitle = lang === "az" ? "BLOQ" : "BLOG";
+  const blogDescription =
+    lang === "az"
+      ? "Müxtəlif mövzulardakı yazılarıma nəzər yetir"
+      : "Take a look at my articles on various topics";
+  const blogButtonText = lang === "az" ? "Yazıları Oxu" : "Read Articles";
 
   return (
     <section className="py-20 bg-gray-50">
@@ -27,7 +38,7 @@ const Blog: React.FC<BlogCTAProps> = ({
           className="text-4xl sm:text-5xl font-extrabold mb-12 uppercase tracking-widest"
           style={{ color: darkBlue }}
         >
-          {title}
+          {blogTitle}
         </h2>
 
         {/* Məzmun Bloku (Gradient fonlu qutu) */}
@@ -44,7 +55,7 @@ const Blog: React.FC<BlogCTAProps> = ({
 
           {/* Məlumat Mətni */}
           <p className="text-white text-3xl sm:text-4xl font-semibold mb-8 relative z-10 max-w-lg mx-auto leading-tight">
-            {description}
+            {blogDescription}
           </p>
 
           {/* Knapp (Button) */}
@@ -52,7 +63,7 @@ const Blog: React.FC<BlogCTAProps> = ({
             href={buttonLink}
             className="inline-flex items-center justify-center bg-white text-blue-700 hover:bg-gray-100 font-medium py-3 px-6 rounded-full transition duration-300 shadow-lg relative z-10"
           >
-            {buttonText}
+            {blogButtonText}
             <ArrowRight className="ml-2 h-5 w-5" />
           </a>
         </div>

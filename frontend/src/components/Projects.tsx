@@ -3,6 +3,10 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+interface ProjectsProps {
+  lang: string; // [lang]/page.tsx tərəfindən ötürülən dil kodu
+}
+
 // Layihə məlumatları üçün TypeScript interfeysi
 interface Project {
   id: number;
@@ -80,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isActive }) => {
 };
 
 // Əsas Projects Komponenti
-const Projects: React.FC = () => {
+const Projects: React.FC<ProjectsProps> = ({ lang }) => {
   // Karusel funksionallığı üçün state (hazırda statik olaraq 1-ci layihəni aktiv edir)
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -97,7 +101,8 @@ const Projects: React.FC = () => {
             className="text-4xl sm:text-5xl font-extrabold"
             style={{ color: customBlue }} // Xüsusi rəng
           >
-            LAYİHƏLƏR
+            {/* ✅ Çoxdilli Başlıq Nümunəsi: */}
+            {lang === "az" ? "LAYİHƏLƏR" : "PROJECTS"}
           </h2>
         </div>
 

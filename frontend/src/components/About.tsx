@@ -7,7 +7,15 @@ import SkillCard from "./SkillCard";
 import { Code, Server, PenTool, Search, Share2, Layout } from "lucide-react";
 import Photo from "../../public/images/xeyal-necefsoy.jpg";
 
-const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  // ✅ Yeni propu əlavə edirik:
+  lang: string;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({
+  // ✅ Qəbul edilən propların arasına `lang` əlavə edilir:
+  lang,
+}) => {
   // Bacarıq məlumatlarının massivi
   const skills = [
     {

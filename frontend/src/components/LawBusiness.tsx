@@ -2,11 +2,15 @@ import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // Sadəcə oxlar üçün
 
 // Komponent üçün TypeScript interfeysi (props olmasa da gələcək üçün faydalıdır)
-// interface LawBusinessProps {
-//   // Əlavə props-lar gələ bilər
-// }
+interface LawBusinessProps {
+  // ✅ Yeni propu əlavə edirik:
+  lang: string;
+}
 
-const LawBusiness: React.FC = () => {
+const LawBusiness: React.FC<LawBusinessProps> = ({
+  // ✅ Qəbul edilən propların arasına `lang` əlavə edilir:
+  lang,
+}) => {
   return (
     // Arxa plan, ölçü və mərkəzləşdirmə
     <section className="relative bg-dark-blue min-h-[600px] flex items-center justify-center py-20 overflow-hidden">

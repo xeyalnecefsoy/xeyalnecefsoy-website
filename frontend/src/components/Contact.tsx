@@ -9,13 +9,26 @@ interface FormData {
   message: string;
 }
 
-const Contact: React.FC = () => {
+// ✅ Yeni interfeys: Contact komponenti üçün
+interface ContactProps {
+  lang: string; // [lang]/page.tsx tərəfindən ötürülən dil kodu
+}
+
+const Contact: React.FC<ContactProps> = ({ lang }) => {
   // Form dataları üçün state
   const [formData, setFormData] = React.useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
+
+  // Tərcümə edilmiş mətnləri təyin edin
+  const titleText = lang === "az" ? "ƏLAQƏ" : "CONTACT";
+  const subtitleText =
+    lang === "az"
+      ? "Müraciətlər 24 saat ərzində cavablandırılır"
+      : "Requests are answered within 24 hours";
+  const sendButtonText = lang === "az" ? "Göndər" : "Send";
 
   // Şəkildəki tünd göy rəng üçün təxmin
   const darkBlue = "#14365d";
@@ -50,13 +63,11 @@ const Contact: React.FC = () => {
           className="text-4xl sm:text-5xl font-extrabold mb-4 uppercase tracking-widest"
           style={{ color: darkBlue }}
         >
-          ƏLAQƏ
+          {titleText}
         </h2>
 
         {/* Alt Başlıq */}
-        <p className="text-gray-600 text-lg mb-12">
-          Müraciətlər 24 saat ərzində cavablandırılır
-        </p>
+        <p className="text-gray-600 text-lg mb-12">{subtitleText}</p>
 
         {/* Əlaqə Forması */}
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -104,7 +115,7 @@ const Contact: React.FC = () => {
             type="submit"
             className="w-40 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md"
           >
-            Göndər
+            {sendButtonText}
           </button>
         </form>
       </div>

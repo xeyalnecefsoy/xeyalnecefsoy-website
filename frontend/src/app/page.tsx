@@ -1,23 +1,7 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Navbar from "@/components/Navbar";
-import LawBusiness from "@/components/LawBusiness";
-import Projects from "@/components/Projects";
-import Blog from "@/components/Blog";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+// src/app/page.tsx (Kök səhifə - yalnız yönləndirmə üçün)
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div>
-      <Navbar />
-      <Hero />
-      <About />
-      <LawBusiness />
-      <Projects />
-      <Blog />
-      <Contact />
-      <Footer />
-    </div>
-  );
+export default function RootPage() {
+  // Bütün istifadəçiləri default olaraq Azərbaycan dilinə yönləndirir
+  redirect("/az");
 }

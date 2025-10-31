@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export const metadata = {
@@ -28,8 +27,6 @@ export default function BlogPage() {
 
   return (
     <div>
-      <Navbar />
-
       <section className="min-h-screen bg-gradient-to-b from-[#001F3F] to-[#000814] text-white py-20 px-6 md:px-20">
         <div className="max-w-5xl mx-auto text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Bloq Yazılarım</h1>
