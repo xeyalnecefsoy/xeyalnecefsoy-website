@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Type-Safe APIs with tRPC">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g3)"/>
+  <g fill="#fff" fill-opacity="0.9" transform="translate(140,140)">
+    <rect x="0" y="0" width="280" height="120" rx="12"/>
+    <rect x="320" y="0" width="280" height="120" rx="12"/>
+    <rect x="640" y="0" width="280" height="120" rx="12"/>
+    <rect x="0" y="160" width="920" height="260" rx="16"/>
+  </g>
+  <text x="140" y="110" font-family="Inter,Segoe UI,Arial" font-weight="700" font-size="48" fill="#fff">Type-Safe APIs with tRPC</text>
+</svg>
