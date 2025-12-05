@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
+import type { Route } from 'next'
 import { LayoutDashboard, FileText, Briefcase, LogOut, Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { LanguageSwitcher } from '@/components/language-switcher'
@@ -53,9 +54,9 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
   }
 
   const navItems = [
-    { href: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
-    { href: '/admin/blog', icon: FileText, label: 'Blog Posts' },
-    { href: '/admin/projects', icon: Briefcase, label: 'Projects' },
+    { href: '/admin' as Route, icon: LayoutDashboard, label: 'Dashboard' },
+    { href: '/admin/blog' as Route, icon: FileText, label: 'Blog Posts' },
+    { href: '/admin/projects' as Route, icon: Briefcase, label: 'Projects' },
   ]
 
   return (
