@@ -17,6 +17,7 @@ type Project = {
 export default function ProjectsListPage() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetchProjects()
@@ -24,11 +25,17 @@ export default function ProjectsListPage() {
 
   const fetchProjects = async () => {
     try {
+      setError(null)
       const res = await fetch('/api/admin/projects')
+      if (!res.ok) {
+        throw new Error(`Failed to fetch: ${res.status}`)
+      }
       const data = await res.json()
-      setProjects(data)
+      setProjects(Array.isArray(data) ? data : [])
     } catch (error) {
       console.error('Failed to fetch projects:', error)
+      setError('Failed to load projects. Please refresh the page.')
+      setProjects([])
     } finally {
       setLoading(false)
     }
@@ -44,11 +51,69 @@ export default function ProjectsListPage() {
       }
     } catch (error) {
       console.error('Failed to delete project:', error)
+      alert('Failed to delete project. Please try again.')
     }
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold">Projects</h1>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              Manage your portfolio projects
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 animate-pulse"
+            >
+              <div className="aspect-video w-full bg-gray-200 dark:bg-gray-800" />
+              <div className="p-4 space-y-3">
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-20" />
+                <div className="h-5 bg-gray-200 dark:bg-gray-800 rounded w-3/4" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-full" />
+                <div className="flex gap-2 pt-2">
+                  <div className="flex-1 h-9 bg-gray-200 dark:bg-gray-800 rounded" />
+                  <div className="flex-1 h-9 bg-gray-200 dark:bg-gray-800 rounded" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold">Projects</h1>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              Manage your portfolio projects
+            </p>
+          </div>
+        </div>
+        <div className="rounded-xl border-2 border-red-300 bg-red-50 p-8 text-center dark:border-red-700 dark:bg-red-900/20">
+          <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
+          <button
+            onClick={() => {
+              setLoading(true)
+              fetchProjects()
+            }}
+            className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    )
   }
 
   return (

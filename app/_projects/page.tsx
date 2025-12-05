@@ -6,6 +6,7 @@ import { useI18n } from '@/components/i18n'
 import { useMemo, useState } from 'react'
 import { projects } from '@/app/../data/projects'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Route } from 'next'
 
 export default function ProjectsPage() {
@@ -39,7 +40,19 @@ export default function ProjectsPage() {
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {items.map((p) => (
               <Link key={p.slug} href={`/projects/${p.slug}` as Route} className="group overflow-hidden rounded-lg border border-gray-200 bg-white p-3 transition hover:shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                <div className="mb-3 aspect-[4/3] w-full rounded-md bg-gradient-to-tr from-brand/20 via-brand/5 to-transparent" />
+                {p.image ? (
+                  <div className="relative mb-3 aspect-[4/3] w-full overflow-hidden rounded-md">
+                    <Image
+                      src={p.image}
+                      alt={p.title[lang]}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="mb-3 aspect-[4/3] w-full rounded-md bg-gradient-to-tr from-brand/20 via-brand/5 to-transparent" />
+                )}
                 <div className="font-medium leading-tight">{p.title[lang]}</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">{p.desc[lang]}</div>
               </Link>
