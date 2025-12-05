@@ -2,6 +2,7 @@
 
 import { useI18n } from '@/components/i18n'
 import Link from 'next/link'
+import type { Route } from 'next'
 
 export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   const { t } = useI18n()
@@ -14,7 +15,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">An unexpected error occurred. Please try again.</p>
             <div className="mt-4 flex items-center justify-center gap-2">
               <button onClick={reset} className="btn btn-primary">Retry</button>
-              <Link href="/" className="btn btn-ghost">{t.common.nav.home}</Link>
+              <Link href={'/' as Route} className="btn btn-ghost">{t.common.nav.home}</Link>
             </div>
           </div>
         </div>
