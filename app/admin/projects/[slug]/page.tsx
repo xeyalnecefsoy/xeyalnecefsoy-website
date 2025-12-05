@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { ArrowLeft, Save } from 'lucide-react'
 import Link from 'next/link'
+import type { Route } from 'next'
 
 export default function EditProjectPage() {
   const router = useRouter()
@@ -83,7 +84,7 @@ export default function EditProjectPage() {
     <div>
       <div className="mb-8">
         <Link
-          href="/admin/projects"
+          href={'/admin/projects' as Route}
           className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -203,7 +204,7 @@ export default function EditProjectPage() {
             {saving ? 'Saving...' : 'Save Changes'}
           </button>
           <Link
-            href="/admin/projects"
+            href={'/admin/projects' as Route}
             className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-semibold transition-colors hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
           >
             Cancel

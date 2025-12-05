@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import type { Route } from 'next'
 import { Plus, Edit, Trash2, Image as ImageIcon } from 'lucide-react'
 import Image from 'next/image'
 
@@ -60,7 +61,7 @@ export default function ProjectsListPage() {
           </p>
         </div>
         <Link
-          href="/admin/projects/new"
+          href={'/admin/projects/new' as Route}
           className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-brand to-blue-600 px-4 py-2 font-semibold text-white shadow-lg transition-all hover:shadow-xl"
         >
           <Plus className="h-5 w-5" />
@@ -102,7 +103,7 @@ export default function ProjectsListPage() {
               
               <div className="flex gap-2">
                 <Link
-                  href={`/admin/projects/${project.slug}`}
+                  href={`/admin/projects/${project.slug}` as Route}
                   className="flex-1 rounded-lg border border-gray-300 py-2 text-center text-sm transition-colors hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
                 >
                   Edit
@@ -122,7 +123,7 @@ export default function ProjectsListPage() {
           <div className="col-span-full rounded-xl border-2 border-dashed border-gray-300 p-12 text-center dark:border-gray-700">
             <p className="text-gray-600 dark:text-gray-400">No projects yet</p>
             <Link
-              href="/admin/projects/new"
+              href={'/admin/projects/new' as Route}
               className="mt-4 inline-flex items-center gap-2 text-brand hover:underline"
             >
               <Plus className="h-4 w-4" />

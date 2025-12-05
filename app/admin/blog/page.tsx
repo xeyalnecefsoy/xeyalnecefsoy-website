@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import type { Route } from 'next'
 import Image from 'next/image'
 import { Plus, Edit, Trash2, Calendar, Image as ImageIcon } from 'lucide-react'
 
@@ -61,7 +62,7 @@ export default function BlogListPage() {
           </p>
         </div>
         <Link
-          href="/admin/blog/new"
+          href={'/admin/blog/new' as Route}
           className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-brand to-blue-600 px-4 py-2 font-semibold text-white shadow-lg transition-all hover:shadow-xl"
         >
           <Plus className="h-5 w-5" />
@@ -120,7 +121,7 @@ export default function BlogListPage() {
             {/* Actions */}
             <div className="flex flex-col gap-2">
               <Link
-                href={`/admin/blog/${post.slug}`}
+                href={`/admin/blog/${post.slug}` as Route}
                 className="rounded-lg border border-gray-300 p-2 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
               >
                 <Edit className="h-5 w-5" />
@@ -139,7 +140,7 @@ export default function BlogListPage() {
           <div className="rounded-xl border-2 border-dashed border-gray-300 p-12 text-center dark:border-gray-700">
             <p className="text-gray-600 dark:text-gray-400">No blog posts yet</p>
             <Link
-              href="/admin/blog/new"
+              href={'/admin/blog/new' as Route}
               className="mt-4 inline-flex items-center gap-2 text-brand hover:underline"
             >
               <Plus className="h-4 w-4" />

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { FileText, Briefcase, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
+import type { Route } from 'next'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -38,13 +39,13 @@ export default function AdminDashboard() {
       title: 'Blog Posts',
       value: stats.totalPosts,
       icon: FileText,
-      href: '/admin/blog',
+      href: '/admin/blog' as Route,
     },
     {
       title: 'Projects',
       value: stats.totalProjects,
       icon: Briefcase,
-      href: '/admin/projects',
+      href: '/admin/projects' as Route,
     },
   ]
 
