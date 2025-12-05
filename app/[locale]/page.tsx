@@ -105,7 +105,6 @@ export default function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   ),
-                  gradient: 'from-blue-500/10 to-cyan-500/10'
                 },
                 { 
                   title: 'Faster Websites', 
@@ -115,7 +114,6 @@ export default function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
-                  gradient: 'from-purple-500/10 to-pink-500/10'
                 },
                 { 
                   title: 'Stronger Brand', 
@@ -125,12 +123,11 @@ export default function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
                   ),
-                  gradient: 'from-orange-500/10 to-red-500/10'
                 },
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br ${item.gradient} p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-brand/50 hover:-translate-y-2 dark:border-gray-800`}
+                  className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-brand/5 to-blue-600/5 p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-brand/50 hover:-translate-y-2 dark:border-gray-800"
                 >
                   <div className="relative z-10">
                     <div className="mb-4 inline-flex rounded-xl bg-white p-3 text-brand shadow-md dark:bg-gray-900">

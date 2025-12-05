@@ -21,42 +21,36 @@ export default function ServicesPage() {
       desc: cards.ecommerce.desc, 
       icon: ShoppingCart, 
       href: href(locale, 'services') + '/ecommerce' as Route,
-      gradient: 'from-blue-500/10 to-cyan-500/10'
     },
     { 
       title: cards.saas.title, 
       desc: cards.saas.desc, 
       icon: Code, 
       href: href(locale, 'services') + '/saas-dashboards' as Route,
-      gradient: 'from-purple-500/10 to-pink-500/10'
     },
     { 
       title: cards.landing.title, 
       desc: cards.landing.desc, 
       icon: Rocket, 
       href: href(locale, 'services') + '/landing-pages' as Route,
-      gradient: 'from-orange-500/10 to-red-500/10'
     },
     { 
       title: cards.law.title, 
       desc: cards.law.desc, 
       icon: Scale, 
       href: href(locale, 'services') + '/law-business' as Route,
-      gradient: 'from-green-500/10 to-emerald-500/10'
     },
     { 
       title: cards.webDesign.title, 
       desc: cards.webDesign.desc, 
       icon: Layout, 
       href: href(locale, 'services') as Route,
-      gradient: 'from-indigo-500/10 to-blue-500/10'
     },
     { 
       title: cards.devOpt.title, 
       desc: cards.devOpt.desc, 
       icon: TrendingUp, 
       href: href(locale, 'services') as Route,
-      gradient: 'from-yellow-500/10 to-orange-500/10'
     },
   ]
 
@@ -88,11 +82,11 @@ export default function ServicesPage() {
             </p>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ title, desc, icon: Icon, href, gradient }) => (
+              {services.map(({ title, desc, icon: Icon, href }) => (
                 <Link 
                   key={title} 
                   href={href} 
-                  className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br ${gradient} p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-brand/50 hover:-translate-y-2 dark:border-gray-800`}
+                  className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-brand/5 to-blue-600/5 p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-brand/50 hover:-translate-y-2 dark:border-gray-800"
                 >
                   <div className="relative z-10">
                     <div className="mb-4 inline-flex rounded-xl bg-white p-3 shadow-md dark:bg-gray-900">

@@ -39,14 +39,12 @@ export default function AdminDashboard() {
       value: stats.totalPosts,
       icon: FileText,
       href: '/admin/blog',
-      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       title: 'Projects',
       value: stats.totalProjects,
       icon: Briefcase,
       href: '/admin/projects',
-      gradient: 'from-purple-500 to-pink-500',
     },
   ]
 
@@ -60,20 +58,20 @@ export default function AdminDashboard() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map(({ title, value, icon: Icon, href, gradient }) => (
+        {cards.map(({ title, value, icon: Icon, href }) => (
           <Link
             key={title}
             href={href}
             className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
           >
             <div className="relative z-10">
-              <div className={`mb-4 inline-flex rounded-xl bg-gradient-to-br ${gradient} p-3 text-white shadow-lg`}>
+              <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-brand to-blue-600 p-3 text-white shadow-lg">
                 <Icon className="h-6 w-6" />
               </div>
               <div className="text-3xl font-bold">{value}</div>
               <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">{title}</div>
             </div>
-            <div className={`absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-gradient-to-br ${gradient} opacity-10 transition-transform duration-500 group-hover:scale-150`} />
+            <div className="absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-gradient-to-br from-brand/20 to-blue-600/20 opacity-50 transition-transform duration-500 group-hover:scale-150" />
           </Link>
         ))}
       </div>
