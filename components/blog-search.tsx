@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Route } from 'next'
 
 type Post = {
   id: string
@@ -13,7 +14,7 @@ type Post = {
   image?: string
 }
 
-export function BlogSearch({ posts }: { posts: Post[] }) {
+export function BlogSearch({ posts, pathPrefix = '/blog' }: { posts: Post[]; pathPrefix?: string }) {
   const allTags = useMemo(() => {
     const set = new Set<string>()
     posts.forEach((p) => p.tags.forEach((t) => set.add(t)))
@@ -93,7 +94,7 @@ export function BlogSearch({ posts }: { posts: Post[] }) {
               ))}
             </div>
             <div className="mt-4">
-              <Link href="#" className="text-sm text-brand hover:underline">Read more</Link>
+              <Link href={`${pathPrefix}/${p.id}` as unknown as Route} className="text-sm text-brand hover:underline">Read more</Link>
             </div>
           </article>
         ))}

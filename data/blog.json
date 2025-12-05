@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "boost-core-web-vitals-nextjs",
+    "title": {
+      "en": "Boost Core Web Vitals in Next.js",
+      "az": "Next.js-də Core Web Vitals göstəricilərini artırın"
+    },
+    "summary": {
+      "en": "Practical steps to improve LCP, CLS, and INP.",
+      "az": "LCP, CLS və INP göstəricilərini yaxşılaşdırmaq üçün praktik addımlar."
+    },
+    "tags": [
+      "performance",
+      "nextjs"
+    ],
+    "date": "2025-01-05",
+    "image": "/blog/boost-core-web-vitals.svg"
+  },
+  {
+    "slug": "design-systems-with-tailwind",
+    "title": {
+      "en": "Design Systems with Tailwind",
+      "az": "Tailwind ilə Dizayn Sistemləri"
+    },
+    "summary": {
+      "en": "Scale UI with tokens, components, and docs.",
+      "az": "Tokenlər, komponentlər və sənədlərlə UI-ni ölçəkləndirin."
+    },
+    "tags": [
+      "design",
+      "tailwind"
+    ],
+    "date": "2025-02-12",
+    "image": "/blog/design-systems-tailwind.svg"
+  },
+  {
+    "slug": "seo-for-landing-pages",
+    "title": {
+      "en": "SEO for Landing Pages",
+      "az": "Landing səhifələr üçün SEO"
+    },
+    "summary": {
+      "en": "Bring organic traffic with technical SEO basics.",
+      "az": "Texniki SEO əsasları ilə orqanik trafik qazanın."
+    },
+    "tags": [
+      "seo",
+      "marketing"
+    ],
+    "date": "2025-04-22",
+    "image": "/blog/seo-landing-pages.svg"
+  }
+]

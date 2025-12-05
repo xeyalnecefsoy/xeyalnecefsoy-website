@@ -8,12 +8,14 @@ type Item = { title: string; desc: string }
 export function Carousel({ items, interval = 4000 }: { items: Item[]; interval?: number }) {
   const slides = useMemo(() => items ?? [], [items])
   const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
 
   useEffect(() => {
     if (slides.length <= 1) return
+    if (paused) return
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), interval)
     return () => clearInterval(id)
-  }, [slides.length, interval])
+  }, [slides.length, interval, paused])
 
   if (!slides.length) return null
 
@@ -21,11 +23,23 @@ export function Carousel({ items, interval = 4000 }: { items: Item[]; interval?:
   const next = () => setIndex((i) => (i + 1) % slides.length)
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-      <div className="min-h-[140px]">
+    <div
+      className="relative overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-brand/5 via-transparent to-brand/10 p-6 dark:border-gray-800"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Highlights"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'ArrowLeft') prev()
+        if (e.key === 'ArrowRight') next()
+      }}
+    >
+      <div className="min-h-[160px] md:min-h-[180px] flex items-center">
         <div className="transition-all">
-          <h3 className="text-xl font-semibold">{slides[index].title}</h3>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{slides[index].desc}</p>
+          <h3 className="text-xl font-semibold md:text-2xl">{slides[index].title}</h3>
+          <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 md:text-base">{slides[index].desc}</p>
         </div>
       </div>
 
@@ -38,7 +52,7 @@ export function Carousel({ items, interval = 4000 }: { items: Item[]; interval?:
             <button
               key={i}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-2 w-2 rounded-full ${i === index ? 'bg-brand' : 'bg-gray-300 dark:bg-gray-700'}`}
+              className={`h-2 w-2 rounded-full transition-colors ${i === index ? 'bg-brand' : 'bg-gray-300 dark:bg-gray-700'}`}
               onClick={() => setIndex(i)}
             />
           ))}
