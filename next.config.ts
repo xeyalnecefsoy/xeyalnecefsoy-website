@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'source.unsplash.com' },
       { protocol: 'https', hostname: 'images.pexels.com' }
     ]
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Disable minification to avoid cssnano error
+      config.optimization.minimize = false;
+    }
+    return config;
   }
 }
 

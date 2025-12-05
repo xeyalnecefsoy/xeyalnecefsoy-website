@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 
-export default function BlogDetail({ params }: { params: { slug: string } }) {
+export default function BlogDetail() {
   const { lang } = useI18n()
   const { slug } = useParams<{ slug: string }>()
   const post = posts.find(p => p.slug === slug)

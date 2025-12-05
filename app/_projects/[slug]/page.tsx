@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+export default function ProjectDetail() {
   const { lang, t } = useI18n()
   const { slug } = useParams<{ slug: string }>()
   const project = projects.find(p => p.slug === slug)
