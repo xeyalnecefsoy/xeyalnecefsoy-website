@@ -18,8 +18,8 @@ export const az: Dictionary = {
     viewPrices: 'Qiymətlərə bax',
   },
   home: {
-    heroTitle: 'Müasir portfoli ilə onlayn varlığınızı qurun',
-    heroDesc: 'Brendinizi önə çıxaran və ziyarətçiləri müştəriyə çevirən təmiz və responsiv saytlar hazırlayıram.',
+    heroTitle: 'Biznesiniz üçün Peşəkar və Müasir Veb Həllər',
+    heroDesc: 'Brendinizi önə çıxaran, ziyarətçiləri müştəriyə çevirən sürətli və keyfiyyətli veb saytlar hazırlayıram.',
     viewServices: 'Xidmətlərə bax',
     aboutTitle: 'Haqqımda',
     aboutDesc: 'Xəyal Nəcəfsoy — Kreativ Mütəxəssis | FullStack Developer. Next.js, TypeScript və Tailwind CSS ilə sürətli, əlçatan və gözəl veb təcrübələr yaradıram. Məqsədim möhkəm mühəndisliyi düşünülmüş dizaynla birləşdirərək biznes nəticələrinizi yaxşılaşdırmaqdır.',
@@ -44,7 +44,8 @@ export const az: Dictionary = {
       webDesign: 'Müasir Veb Dizayn',
       seo: 'SEO Optimizasiyası',
       performance: 'Yüksək Performans'
-    }
+    },
+    premiumSolutions: 'Premium Veb Həlləri'
   },
   services: {
     title: 'Xidmətlər',

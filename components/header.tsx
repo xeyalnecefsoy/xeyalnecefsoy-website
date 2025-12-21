@@ -42,7 +42,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href={href(locale,'home') as Route} className="group flex items-center gap-2.5 font-bold tracking-tight text-lg transition-all hover:scale-105">
-          <div className="relative h-8 w-8 overflow-hidden rounded-lg shadow-md transition-transform group-hover:rotate-12">
+          <div className="relative h-8 w-8 overflow-hidden rounded-lg transition-transform group-hover:rotate-12">
             <Image src="/logo.png" alt="Logo" fill className="object-cover" />
           </div>
           <span className="text-gray-900 dark:text-white">{t.common.brand}</span>

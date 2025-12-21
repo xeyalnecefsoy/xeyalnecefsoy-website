@@ -44,7 +44,8 @@ export const en = {
       webDesign: 'Modern Web Design',
       seo: 'SEO Optimization',
       performance: 'High Performance'
-    }
+    },
+    premiumSolutions: 'Premium Web Solutions'
   },
   services: {
     title: 'Services',

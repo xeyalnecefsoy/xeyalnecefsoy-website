@@ -37,14 +37,11 @@ export function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-sm font-medium text-brand"
           >
             <Sparkles className="h-4 w-4" />
-            <span>Premium Web Solutions</span>
+            <span>{t.home.premiumSolutions}</span>
           </motion.div>
 
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-6xl leading-[1.1] mx-auto lg:mx-0">
-            <span className="block">{t.home.heroTitle.split(' ').slice(0, 2).join(' ')}</span>
-            <span className="text-brand">
-               {t.home.heroTitle.split(' ').slice(2).join(' ')}
-            </span>
+            {t.home.heroTitle}
           </h1>
 
           <p className="mb-8 max-w-lg text-lg text-gray-600 dark:text-gray-400 md:text-xl mx-auto lg:mx-0">
