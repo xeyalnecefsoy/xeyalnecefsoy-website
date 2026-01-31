@@ -3,8 +3,8 @@ import { Query } from 'appwrite';
 
 export interface Project {
   $id: string;
-  title: string; // JSON string: { en: "...", az: "..." }
-  desc: string;  // JSON string: { en: "...", az: "..." }
+  title: { en: string; az: string };
+  desc: { en: string; az: string };
   slug: string;
   image: string; // URL
   category: 'web' | 'ecommerce' | 'saas' | 'landing';
