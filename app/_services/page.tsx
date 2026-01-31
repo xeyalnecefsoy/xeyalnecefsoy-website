@@ -76,9 +76,9 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <section className="py-16">
           <div className="container">
-            <h2 className="mb-3 text-center text-2xl font-semibold tracking-tight md:text-3xl">What I Offer</h2>
+            <h2 className="mb-3 text-center text-2xl font-semibold tracking-tight md:text-3xl">{t.services.whatIOffer}</h2>
             <p className="mb-12 text-center text-gray-600 dark:text-gray-400">
-              Specialized services tailored to your business needs
+              {t.services.offerDesc}
             </p>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                     <h3 className="mb-3 text-xl font-bold">{title}</h3>
                     <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{desc}</p>
                     <div className="flex items-center gap-2 text-sm font-semibold text-brand">
-                      Learn more
+                      {t.services.viewDetails}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
@@ -109,9 +109,9 @@ export default function ServicesPage() {
         {/* Process Section */}
         <section className="border-y border-gray-200 bg-gray-50 py-16 dark:border-gray-800 dark:bg-gray-900/50">
           <div className="container">
-            <h2 className="mb-3 text-center text-2xl font-semibold tracking-tight md:text-3xl">How It Works</h2>
+            <h2 className="mb-3 text-center text-2xl font-semibold tracking-tight md:text-3xl">{t.services.howItWorks}</h2>
             <p className="mb-12 text-center text-gray-600 dark:text-gray-400">
-              Simple, transparent process from idea to launch
+              {t.services.howItWorksDesc}
             </p>
             
             <div className="grid gap-8 md:grid-cols-3">
@@ -145,15 +145,15 @@ export default function ServicesPage() {
         <section className="py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl">
-              <h2 className="mb-8 text-center text-2xl font-semibold tracking-tight md:text-3xl">Why Work With Me</h2>
+              <h2 className="mb-8 text-center text-2xl font-semibold tracking-tight md:text-3xl">{t.services.whyWorkWithMe}</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  'Fast turnaround times',
-                  'Modern tech stack',
-                  'SEO optimized',
-                  'Responsive design',
-                  'Clean, maintainable code',
-                  'Ongoing support'
+                  t.services.benefits.fastTurnaround,
+                  t.services.benefits.modernTech,
+                  t.services.benefits.seoOptimized,
+                  t.services.benefits.responsiveDesign,
+                  t.services.benefits.cleanCode,
+                  t.services.benefits.ongoingSupport
                 ].map((benefit) => (
                   <div key={benefit} className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
                     <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-brand" />

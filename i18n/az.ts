@@ -23,29 +23,55 @@ export const az: Dictionary = {
     viewServices: 'Xidmətlərə bax',
     aboutTitle: 'Haqqımda',
     aboutDesc: 'Xəyal Nəcəfsoy — Kreativ Mütəxəssis | FullStack Developer. Next.js, TypeScript və Tailwind CSS ilə sürətli, əlçatan və gözəl veb təcrübələr yaradıram. Məqsədim möhkəm mühəndisliyi düşünülmüş dizaynla birləşdirərək biznes nəticələrinizi yaxşılaşdırmaqdır.',
-    skills: 'Bacarıqlar',
+    moreAboutMe: 'Haqqımda daha çox',
+    skills: 'İstifadə etdiyim texnologiyalar',
     services: 'Xidmətlər',
+    servicesDesc: 'İdeyaları qabaqcıl texnologiyalarla rəqəmsal reallığa çevirirəm.',
     boost: 'Biznesinizi gücləndirin',
     projects: 'Layihələr',
-    blog: 'Bloqdan',
+    blog: 'Bloq',
     viewAll: 'Hamısına bax',
     contact: 'Əlaqə',
+    contactDesc: 'Layihənizi müzakirə etmək üçün yazın. Hər zaman yeni ideyalara açığam.',
+    letstalk: 'Gəlin danışaq',
     form: {
       name: 'Ad',
       namePh: 'Adınız',
       email: 'Email',
       emailPh: 'siz@example.com',
       message: 'Mesaj',
-      messagePh: 'Necə kömək edə bilərəm?',
+      messagePh: 'Layihəniz barədə danışın...',
       send: 'Mesajı göndər',
-      note: 'Bu demo formdur. Mesajları almaq üçün seçdiyiniz form xidmətinə qoşun.'
+      sending: 'Göndərilir...',
+      sent: 'Mesaj göndərildi!',
+      error: 'Xəta baş verdi, yenidən cəhd edin.',
+      note: 'Bu form demo rejimdədir.'
     },
     heroCarousel: {
       webDesign: 'Müasir Veb Dizayn',
       seo: 'SEO Optimizasiyası',
       performance: 'Yüksək Performans'
     },
-    premiumSolutions: 'Premium Veb Həlləri'
+    premiumSolutions: 'Premium Veb Həlləri',
+    stats: {
+      frontend: 'Frontend',
+      frontendDesc: 'Müasir & Responsiv',
+      backend: 'Backend',
+      backendDesc: 'Miqyaslanan & Təhlükəsiz',
+      design: 'Dizayn',
+      designDesc: 'Təmiz & Estetik',
+      strategy: 'Strategiya',
+      strategyDesc: 'İnkişaf yönümlü'
+    },
+    serviceItems: {
+      webDev: 'Veb İnkişafı',
+      webDevDesc: 'Next.js və React istifadə edərək yüksək performanslı saytlar.',
+      mobileApps: 'Mobil Tətbiqlər',
+      mobileAppsDesc: 'iOS və Android üçün çarpaz platformalı həllər.',
+      uiUx: 'UI/UX Dizayn',
+      uiUxDesc: 'İstifadəçi əlaqəsini artıran intuitiv dizaynlar.',
+      learnMore: 'Daha ətraflı'
+    }
   },
   services: {
     title: 'Xidmətlər',
@@ -81,16 +107,34 @@ export const az: Dictionary = {
         premium: { name: 'Premium', price: '$1999', desc: 'Fərdi dizayn, inteqrasiyalar, performans və analitika.' }
       },
       getStarted: 'Başla'
-    }
+    },
+    whatIOffer: 'Təklif etdiklərim',
+    offerDesc: 'Biznes ehtiyaclarınıza uyğunlaşdırılmış xüsusi xidmətlər',
+    viewDetails: 'Ətraflı bax',
+    howItWorks: 'Necə İşləyir',
+    howItWorksDesc: 'İdeyadan yayıma qədər sadə, şəffaf proses',
+    whyWorkWithMe: 'Niyə Məni Seçməlisiniz',
+    benefits: {
+      fastTurnaround: 'Sürətli Təhvil',
+      modernTech: 'Müasir Texnologiyalar',
+      seoOptimized: 'SEO Optimizasiya',
+      responsiveDesign: 'Responsiv Dizayn',
+      cleanCode: 'Təmiz Kod',
+      ongoingSupport: 'Davamlı Dəstək'
+    },
   },
   projects: {
     title: 'Layihələr',
+    subtitle: 'Son işlərimə nəzər salın və bizneslərin böyüməsinə necə kömək etdiyimi görün.',
     categories: {
       all: 'Hamısı',
       web: 'Saytlar',
       ecommerce: 'E-ticarət',
       saas: 'SaaS',
       landing: 'Landing səhifələr'
-    }
+    },
+    viewCaseStudy: 'Case Study',
+    noPreview: 'Görüntü yoxdur',
+    filter: 'Filtr'
   }
 }

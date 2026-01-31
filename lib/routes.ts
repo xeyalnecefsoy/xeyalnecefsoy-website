@@ -23,6 +23,7 @@ export const routeMap: Record<Locale, Record<'home'|'services'|'projects'|'price
 }
 
 export function href(locale: Locale, key: keyof typeof routeMap['az']) {
-  const seg = routeMap[locale][key]
+  const currentMap = routeMap[locale] || routeMap['az']
+  const seg = currentMap[key]
   return `/${locale}${seg ? '/' + seg : ''}`
 }

@@ -23,21 +23,28 @@ export const en = {
     viewServices: 'View services',
     aboutTitle: 'About Me',
     aboutDesc: 'Khayal Najafsoy — Creative Specialist | FullStack Developer. I craft fast, accessible, and beautiful web experiences using Next.js, TypeScript, and Tailwind CSS. My focus is blending solid engineering with thoughtful design to boost your business outcomes.',
-    skills: 'Skills',
+    moreAboutMe: 'More About Me',
+    skills: 'Tech Stack',
     services: 'Services',
+    servicesDesc: 'Transforming ideas into digital reality with cutting-edge technologies.',
     boost: 'Boost Your Business',
     projects: 'Projects',
     blog: 'From the Blog',
     viewAll: 'View all',
     contact: 'Contact',
+    contactDesc: 'Interested in working together? Fill out the form or reach out directly. I\'m always open to discussing new projects and ideas.',
+    letstalk: 'Let\'s talk',
     form: {
       name: 'Name',
       namePh: 'Your name',
       email: 'Email',
       emailPh: 'you@example.com',
       message: 'Message',
-      messagePh: 'How can I help?',
+      messagePh: 'Tell me about your project...',
       send: 'Send Message',
+      sending: 'Sending...',
+      sent: 'Message sent!',
+      error: 'Something went wrong. Please try again.',
       note: 'This is a placeholder form. Connect to your preferred form service to receive submissions.'
     },
     heroCarousel: {
@@ -45,7 +52,26 @@ export const en = {
       seo: 'SEO Optimization',
       performance: 'High Performance'
     },
-    premiumSolutions: 'Premium Web Solutions'
+    premiumSolutions: 'Premium Web Solutions',
+    stats: {
+      frontend: 'Frontend',
+      frontendDesc: 'Modern & Responsive',
+      backend: 'Backend',
+      backendDesc: 'Scalable & Secure',
+      design: 'Design',
+      designDesc: 'Clean & Aesthetic',
+      strategy: 'Strategy',
+      strategyDesc: 'Growth Oriented'
+    },
+    serviceItems: {
+      webDev: 'Web Development',
+      webDevDesc: 'High-performance websites using Next.js & React.',
+      mobileApps: 'Mobile Apps',
+      mobileAppsDesc: 'Cross-platform solutions tailored for iOS & Android.',
+      uiUx: 'UI/UX Design',
+      uiUxDesc: 'Intuitive designs that drive user engagement.',
+      learnMore: 'Learn more'
+    }
   },
   services: {
     title: 'Services',
@@ -81,17 +107,35 @@ export const en = {
         premium: { name: 'Premium', price: '$1999', desc: 'Custom UI, integrations, performance tuning, analytics.' }
       },
       getStarted: 'Get started'
-    }
+    },
+    whatIOffer: 'What I Offer',
+    offerDesc: 'Specialized services tailored to your business needs',
+    viewDetails: 'Learn more',
+    howItWorks: 'How It Works',
+    howItWorksDesc: 'Simple, transparent process from idea to launch',
+    whyWorkWithMe: 'Why Work With Me',
+    benefits: {
+      fastTurnaround: 'Fast turnaround times',
+      modernTech: 'Modern tech stack',
+      seoOptimized: 'SEO optimized',
+      responsiveDesign: 'Responsive design',
+      cleanCode: 'Clean, maintainable code',
+      ongoingSupport: 'Ongoing support'
+    },
   },
   projects: {
     title: 'Projects',
+    subtitle: 'Browse through my recent work and see how I help businesses grow.',
     categories: {
       all: 'All',
       web: 'Websites',
       ecommerce: 'E-commerce',
       saas: 'SaaS',
       landing: 'Landing Pages'
-    }
+    },
+    viewCaseStudy: 'View Case Study',
+    noPreview: 'No Preview',
+    filter: 'Filter'
   }
 }
 
