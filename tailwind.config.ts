@@ -24,6 +24,20 @@ export default {
           900: '#1e3a8a',
           950: '#172554',
         },
+        accent: {
+          DEFAULT: '#a855f7',
+          50: '#f5edff',
+          100: '#ead6ff',
+          200: '#d7b5ff',
+          300: '#c084fc',
+          400: '#a855f7',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
+        },
         dark: {
           bg: '#000000',
           card: '#0a0a0a',
@@ -36,12 +50,28 @@ export default {
           '2xl': '1280px'
         }
       },
+      backgroundImage: {
+        'radial-brand': 'radial-gradient(circle at center, rgba(59, 130, 246, 0.18), rgba(59, 130, 246, 0) 65%)',
+        'radial-accent': 'radial-gradient(circle at center, rgba(168, 85, 247, 0.18), rgba(168, 85, 247, 0) 65%)',
+        'mesh-brand': 'radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.18), transparent 45%),' +
+          'radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.14), transparent 40%),' +
+          'radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.10), transparent 50%)',
+        'mesh-brand-accent':
+          'radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.18), transparent 45%),' +
+          'radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.16), transparent 40%),' +
+          'radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.12), transparent 50%)',
+      },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow': 'glow 4s ease-in-out infinite alternate',
+      },
+      boxShadow: {
+        'glow-brand': '0 0 24px rgba(59, 130, 246, 0.25)',
+        'glow-accent': '0 0 24px rgba(168, 85, 247, 0.22)',
+        'glow-accent-strong': '0 0 48px rgba(168, 85, 247, 0.28)',
       },
       keyframes: {
         fadeIn: {

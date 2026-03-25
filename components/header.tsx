@@ -23,11 +23,11 @@ export function Header() {
   const locale: Locale = (params?.locale as Locale) || 'az'
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/8 bg-black/70 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link href={href(locale,'home') as Route} className="group flex items-center gap-2.5 font-bold tracking-tight text-lg transition-all hover:scale-105">
-          <div className="relative h-8 w-8 overflow-hidden rounded-lg transition-transform group-hover:rotate-12">
+        <Link href={href(locale,'home') as Route} className="group flex items-center gap-2.5 font-bold tracking-tight text-lg transition-all">
+          <div className="relative h-8 w-8 overflow-hidden rounded-lg">
             <Image src="/logo.png" alt="Logo" fill className="object-cover" />
           </div>
           <span className="text-white">{t.common.brand}</span>
@@ -41,7 +41,7 @@ export function Header() {
               <Link 
                 key={n.href} 
                 href={href(locale, key) as Route} 
-                className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-white"
+                className="rounded-lg px-4 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40"
               >
                 {t.common.nav[n.key]}
               </Link>
@@ -53,7 +53,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <button 
-            className="rounded-lg p-2 transition-colors hover:bg-white/5 md:hidden" 
+            className="rounded-lg p-2 transition-colors hover:bg-white/5 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40" 
             onClick={() => setOpen((o) => !o)} 
             aria-label="Toggle Menu"
           >
@@ -64,7 +64,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="border-t border-white/5 bg-black md:hidden">
+        <div className="border-t border-white/8 bg-black/70 backdrop-blur-xl md:hidden">
           <div className="container flex flex-col py-4 space-y-1">
             {nav.map((n) => {
               const key = n.key as 'home' | 'projects'
@@ -72,7 +72,7 @@ export function Header() {
                 <Link 
                   key={n.href} 
                   href={href(locale, key) as Route} 
-                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 transition-colors hover:bg-white/5 hover:text-white" 
+                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 transition-colors hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40" 
                   onClick={() => setOpen(false)}
                 >
                   {t.common.nav[n.key]}

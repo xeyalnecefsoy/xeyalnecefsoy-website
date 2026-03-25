@@ -13,38 +13,27 @@ export function Hero() {
   const locale: Locale = (params?.locale as Locale) || 'az'
 
   return (
-    <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+    <section className="relative overflow-hidden min-h-[80vh] flex items-start">
       {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Central glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/[0.07] blur-[150px] animate-glow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/[0.08] blur-[150px] animate-glow" />
         {/* Top-right accent */}
-        <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-blue-600/[0.04] blur-[120px]" />
+        <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-brand-500/[0.07] blur-[130px]" />
         {/* Bottom-left accent */}
-        <div className="absolute -bottom-[10%] -left-[10%] w-[400px] h-[400px] rounded-full bg-brand-500/[0.03] blur-[100px]" />
+        <div className="absolute -bottom-[10%] -left-[10%] w-[400px] h-[400px] rounded-full bg-brand-500/[0.05] blur-[110px]" />
         {/* Subtle dot grid */}
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
       </div>
 
-      <div className="container relative py-24 md:py-32">
+      <div className="container relative pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Badge with spring-in animation */}
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
-            className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-brand-500/20 bg-brand-500/[0.06] px-4 py-1.5 text-sm font-medium text-brand-400"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
-            <span>{t.home.premiumSolutions}</span>
-          </motion.div>
-
           {/* Title with staggered word reveal */}
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-            className="mb-8 text-5xl font-extrabold tracking-tight md:text-7xl lg:text-[5.5rem] leading-[1.05] text-white"
+            className="mb-8 whitespace-pre-line text-5xl font-extrabold tracking-tight md:text-7xl lg:text-[5.5rem] leading-[1.05] text-white"
           >
             {t.home.heroTitle}
           </motion.h1>

@@ -40,7 +40,7 @@ export function HeroCarousel() {
   }, [])
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl group">
+    <div className="relative w-full overflow-hidden rounded-2xl glass group">
        {/* 16:9 Aspect Ratio Container */}
        <div className="relative aspect-video w-full">
          <AnimatePresence mode="wait">
@@ -85,8 +85,8 @@ export function HeroCarousel() {
                   key={i}
                   onClick={() => setIndex(i)}
                   className={`h-2 w-2 rounded-full transition-all shadow-sm ${
-                    index === i ? "bg-brand w-6" : "bg-white/60 hover:bg-white"
-                  }`}
+                    index === i ? "bg-brand-500 w-6" : "bg-white/50 hover:bg-white/80"
+                  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-0`}
                   aria-label={`Go to slide ${i+1}`}
                 />
             ))}

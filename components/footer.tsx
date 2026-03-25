@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useI18n()
   const year = new Date().getFullYear()
   return (
-    <footer className="mt-auto border-t border-white/5 py-8 bg-black">
+    <footer className="mt-auto border-t border-white/8 py-8 bg-black/60 backdrop-blur-xl">
       <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-gray-500">
           © {year} {t.common.brand}. {t.common.rights}
@@ -16,7 +16,7 @@ export function Footer() {
             href="https://www.linkedin.com/in/xeyalnecefsoy" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-brand transition-colors"
+            className="rounded-lg text-white/55 hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40"
             aria-label="LinkedIn"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@ export function Footer() {
             href="https://github.com/xeyalnecefsoy" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-brand transition-colors"
+            className="rounded-lg text-white/55 hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40"
             aria-label="GitHub"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

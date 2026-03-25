@@ -7,6 +7,9 @@ import { projects } from '@/app/../data/projects'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
+import clsx from 'clsx'
+import { cardBaseClass } from '@/components/ui/card'
+import { Mail } from 'lucide-react'
 
 export default function ProjectDetail() {
   const { lang, t } = useI18n()
@@ -17,36 +20,54 @@ export default function ProjectDetail() {
   return (
     <>
       <Header />
-      <main className="flex-1 py-16">
-        <div className="container">
+      <main className="flex-1 py-16 relative overflow-hidden noise-overlay">
+        <div className="absolute inset-0 pointer-events-none bg-radial-brand bg-no-repeat bg-center opacity-15" />
+        <div className="absolute inset-0 pointer-events-none bg-mesh-brand bg-no-repeat bg-cover opacity-10" />
+        <div className="container relative z-10">
           <div className="grid gap-8 md:grid-cols-[1.7fr_0.6fr]">
             <div>
-              <h1 className="mb-3 text-3xl font-bold tracking-tight">{project.title[lang]}</h1>
-              <p className="mb-6 max-w-prose text-gray-600 dark:text-gray-300">{project.desc[lang]}</p>
-              <div className="mb-6 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+              <h1 className="mb-3 text-3xl font-bold tracking-tight text-white">
+                {project.title[lang] || project.title.en}
+              </h1>
+              <p className="mb-8 max-w-prose text-white/60 leading-relaxed">
+                {project.desc[lang] || project.desc.en}
+              </p>
+
+              <div className="mb-8 overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <div className="relative aspect-video w-full">
-                  <Image src={project.image ?? 'https://images.unsplash.com/photo-1519389950473-47ba0277781c'} alt="" fill className="object-cover" sizes="100vw" />
+                  <Image
+                    src={project.image ?? 'https://images.unsplash.com/photo-1519389950473-47ba0277781c'}
+                    alt={project.title[lang] || project.title.en}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    priority
+                  />
                 </div>
               </div>
-              <div className="prose prose-sm dark:prose-invert max-w-none">
-                <p>
-                  This is a sample project detail page. Replace this content with real case study text, images, and outcomes.
+
+              <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+                <h2 className="text-xl font-semibold text-white mb-2">Case study</h2>
+                <p className="text-white/60 leading-relaxed">
+                  Bu layihə üzrə geniş case study məzmunu (məqsədlər, yanaşma, nəticələr) tezliklə əlavə ediləcək.
+                  Eyni tip problemə fokuslanan layihə istəyirsinizsə, aşağıdakı CTA-dan mənə yazın.
                 </p>
-                <ul>
-                  <li>Goals and constraints</li>
-                  <li>Design approach and system</li>
-                  <li>Technical stack and decisions</li>
-                  <li>Results and metrics</li>
-                </ul>
               </div>
             </div>
-            <aside className="space-y-4 rounded-xl border border-gray-200 p-5 text-sm dark:border-gray-800">
-              <div>
-                <div className="font-semibold">Category</div>
-                <div className="text-gray-600 dark:text-gray-300">{project.category}</div>
-              </div>
-              <div>
-                <a href="/#contact" className="btn btn-primary text-sm">{t.common.ctaCreate}</a>
+
+            <aside className="space-y-4">
+              <div className={clsx(cardBaseClass, 'p-5')}>
+                <div className="flex items-center gap-2 mb-4">
+                  <Mail className="h-5 w-5 text-brand-400" />
+                  <div className="font-semibold text-white">{t.common.ctaCreate}</div>
+                </div>
+
+                <a
+                  href="mailto:contact@xeyalnecefsoy.com?subject=Project%20Inquiry"
+                  className="btn btn-primary w-full text-sm"
+                >
+                  Send email
+                </a>
               </div>
             </aside>
           </div>
