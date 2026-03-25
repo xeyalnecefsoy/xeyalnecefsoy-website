@@ -2,9 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight, Sparkles } from 'lucide-react'
-import { HeroCarousel } from '@/components/hero-carousel'
+import { ArrowRight } from 'lucide-react'
 import { useI18n } from '@/components/i18n'
 import { href, type Locale } from '@/lib/routes'
 import { useParams } from 'next/navigation'
@@ -15,65 +13,66 @@ export function Hero() {
   const locale: Locale = (params?.locale as Locale) || 'az'
 
   return (
-    <section className="relative overflow-hidden border-b border-gray-200 dark:border-gray-800">
-      {/* Background Gradients - Simplified */}
+    <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+      {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-brand/5 blur-[120px]" />
-        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-brand/5 blur-[120px]" />
+        {/* Central glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/[0.07] blur-[150px] animate-glow" />
+        {/* Top-right accent */}
+        <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-blue-600/[0.04] blur-[120px]" />
+        {/* Bottom-left accent */}
+        <div className="absolute -bottom-[10%] -left-[10%] w-[400px] h-[400px] rounded-full bg-brand-500/[0.03] blur-[100px]" />
+        {/* Subtle dot grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
       </div>
 
-      <div className="container relative py-20 md:py-32 grid items-center gap-12 lg:grid-cols-2">
-        {/* Text Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center lg:text-left"
-        >
+      <div className="container relative py-24 md:py-32">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Badge with spring-in animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-sm font-medium text-brand"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
+            className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-brand-500/20 bg-brand-500/[0.06] px-4 py-1.5 text-sm font-medium text-brand-400"
           >
-            <Sparkles className="h-4 w-4" />
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
             <span>{t.home.premiumSolutions}</span>
           </motion.div>
 
-          <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-6xl leading-[1.1] mx-auto lg:mx-0">
+          {/* Title with staggered word reveal */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+            className="mb-8 text-5xl font-extrabold tracking-tight md:text-7xl lg:text-[5.5rem] leading-[1.05] text-white"
+          >
             {t.home.heroTitle}
-          </h1>
+          </motion.h1>
 
-          <p className="mb-8 max-w-lg text-lg text-gray-600 dark:text-gray-400 md:text-xl mx-auto lg:mx-0">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.35 }}
+            className="mb-12 max-w-xl mx-auto text-lg text-gray-500 md:text-xl leading-relaxed"
+          >
             {t.home.heroDesc}
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.5 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
             <Link
-              href={`${href(locale, 'home')}#contact` as any}
-              className="group relative inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand/90 hover:ring-4 hover:ring-brand/20"
+              href={`${href(locale, 'home')}#projects` as any}
+              className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-400 hover:shadow-lg hover:shadow-brand-500/25 active:scale-[0.97]"
             >
-              <span>{t.common.ctaCreate}</span>
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <span>{t.home.viewProjects}</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-            <Link
-              href={`${href(locale, 'home')}#services` as any}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800"
-            >
-              {t.home.viewServices}
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Carousel Side */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="relative mx-auto w-full max-w-lg lg:max-w-xl lg:mx-0"
-        >
-           <HeroCarousel />
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -18,12 +18,13 @@ export const en = {
     viewPrices: 'View Prices',
   },
   home: {
-    heroTitle: 'Build your presence with a modern portfolio',
-    heroDesc: 'I design and build clean, responsive websites that highlight your brand and convert visitors into clients.',
+    heroTitle: 'Building products that matter.',
+    heroDesc: 'Founder of Bitig.az, Danyeri.az, and TechTurk.az. I build digital platforms that serve Azerbaijani-speaking communities.',
     viewServices: 'View services',
-    aboutTitle: 'About Me',
-    aboutDesc: 'Khayal Najafsoy — Creative Specialist | FullStack Developer. I craft fast, accessible, and beautiful web experiences using Next.js, TypeScript, and Tailwind CSS. My focus is blending solid engineering with thoughtful design to boost your business outcomes.',
-    moreAboutMe: 'More About Me',
+    viewProjects: 'View Projects',
+    aboutTitle: 'The Vision',
+    aboutDesc: 'I believe in building products that solve real problems for real people. Every platform I create is driven by a mission — to empower Azerbaijani-speaking communities with modern digital tools. From preserving our literary heritage on Bitig.az to connecting people on Danyeri.az and covering innovation on TechTurk.az, my work is defined by impact, not just code.',
+    moreAboutMe: 'About Me',
     skills: 'Tech Stack',
     services: 'Services',
     servicesDesc: 'Transforming ideas into digital reality with cutting-edge technologies.',
@@ -31,8 +32,8 @@ export const en = {
     projects: 'Projects',
     blog: 'From the Blog',
     viewAll: 'View all',
-    contact: 'Contact',
-    contactDesc: 'Interested in working together? Fill out the form or reach out directly. I\'m always open to discussing new projects and ideas.',
+    contact: 'Get in Touch',
+    contactDesc: 'Have an idea worth building? Let\'s talk.',
     letstalk: 'Let\'s talk',
     form: {
       name: 'Name',
@@ -45,23 +46,23 @@ export const en = {
       sending: 'Sending...',
       sent: 'Message sent!',
       error: 'Something went wrong. Please try again.',
-      note: 'This is a placeholder form. Connect to your preferred form service to receive submissions.'
+      note: 'This is a placeholder form.'
     },
     heroCarousel: {
       webDesign: 'Modern Web Design',
       seo: 'SEO Optimization',
       performance: 'High Performance'
     },
-    premiumSolutions: 'Premium Web Solutions',
+    premiumSolutions: 'Founder',
     stats: {
-      frontend: 'Frontend',
-      frontendDesc: 'Modern & Responsive',
-      backend: 'Backend',
-      backendDesc: 'Scalable & Secure',
-      design: 'Design',
-      designDesc: 'Clean & Aesthetic',
-      strategy: 'Strategy',
-      strategyDesc: 'Growth Oriented'
+      frontend: 'Bitig.az',
+      frontendDesc: 'Language & Literature',
+      backend: 'Danyeri.az',
+      backendDesc: 'Dating Platform',
+      design: 'TechTurk.az',
+      designDesc: 'Tech News Hub',
+      strategy: 'Vision',
+      strategyDesc: 'Impact Driven'
     },
     serviceItems: {
       webDev: 'Web Development',
@@ -75,7 +76,7 @@ export const en = {
   },
   services: {
     title: 'Services',
-    description: 'I help businesses ship fast, beautiful, and effective web products. From idea to launch: design, development, and optimization.',
+    description: 'I help businesses ship fast, beautiful, and effective web products.',
     discover: 'Discover',
     discoverText: 'Understand goals, users, and scope via a quick workshop.',
     designBuild: 'Design & Build',
@@ -94,22 +95,22 @@ export const en = {
       ecommerce: { title: 'E-commerce', desc: 'High-performance storefronts with secure checkout.' },
       saas: { title: 'SaaS Dashboards', desc: 'Data-rich, fast dashboards for your product.' },
       landing: { title: 'Landing Pages', desc: 'Conversion-focused pages that drive results.' },
-      law: { title: 'Law Business', desc: 'Specialized websites for legal practices to win client trust.' },
+      law: { title: 'Law Business', desc: 'Specialized websites for legal practices.' },
       webDesign: { title: 'Web Design', desc: 'Clean, modern UI with a focus on usability.' },
       devOpt: { title: 'Development & Optimization', desc: 'Best practices with Next.js, TypeScript, SEO.' }
     },
     pricing: {
       title: 'Pricing',
-      subtitle: 'Choose a plan that fits your scope. Custom quotes available for unique needs.',
+      subtitle: 'Choose a plan that fits your scope.',
       tiers: {
-        basic: { name: 'Basic', price: '$399', desc: 'Single landing page, mobile-first, baseline SEO.' },
-        standard: { name: 'Standard', price: '$999', desc: 'Up to 5 pages, CMS setup, on-page SEO best practices.' },
-        premium: { name: 'Premium', price: '$1999', desc: 'Custom UI, integrations, performance tuning, analytics.' }
+        basic: { name: 'Basic', price: '$399', desc: 'Single landing page, mobile-first.' },
+        standard: { name: 'Standard', price: '$999', desc: 'Up to 5 pages, CMS setup.' },
+        premium: { name: 'Premium', price: '$1999', desc: 'Custom UI, integrations, performance.' }
       },
       getStarted: 'Get started'
     },
     whatIOffer: 'What I Offer',
-    offerDesc: 'Specialized services tailored to your business needs',
+    offerDesc: 'Specialized services tailored to your needs',
     viewDetails: 'Learn more',
     howItWorks: 'How It Works',
     howItWorksDesc: 'Simple, transparent process from idea to launch',
@@ -125,7 +126,7 @@ export const en = {
   },
   projects: {
     title: 'Projects',
-    subtitle: 'Browse through my recent work and see how I help businesses grow.',
+    subtitle: 'Platforms I\'ve built to serve Azerbaijani-speaking communities.',
     categories: {
       all: 'All',
       web: 'Websites',
@@ -133,7 +134,7 @@ export const en = {
       saas: 'SaaS',
       landing: 'Landing Pages'
     },
-    viewCaseStudy: 'View Case Study',
+    viewCaseStudy: 'Visit Project',
     noPreview: 'No Preview',
     filter: 'Filter'
   }

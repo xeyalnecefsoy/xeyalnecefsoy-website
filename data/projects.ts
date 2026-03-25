@@ -1,45 +1,41 @@
 export type Project = {
   slug: string
-  category: 'web' | 'ecommerce' | 'saas' | 'landing'
+  category: 'web' | 'ecommerce' | 'saas' | 'landing' | 'platform'
   title: { en: string; az: string }
   desc: { en: string; az: string }
   image?: string
+  url?: string
 }
 
 export const projects: Project[] = [
   {
-    slug: 'law-firm-site',
-    category: 'web',
-    title: { en: 'Law Firm Site', az: 'Hüquq firması saytı' },
-    desc: { en: 'Trust-building website for a law practice with clear CTAs.', az: 'Aydın çağırışlarla etibar yaradan hüquq firması saytı.' },
-    image: '/projects/project_law_firm_1764939545641.png'
+    slug: 'bitig-az',
+    category: 'platform',
+    title: { en: 'Bitig.az', az: 'Bitig.az' },
+    desc: {
+      en: 'A platform dedicated to Azerbaijani language, literature, and culture. Bringing Azerbaijani written heritage to the digital age.',
+      az: 'Azərbaycan dili, ədəbiyyatı və mədəniyyətinə həsr olunmuş platforma. Yazılı mirasımızı rəqəmsal dövrə gətiririk.'
+    },
+    url: 'https://bitig.az',
   },
   {
-    slug: 'fashion-ecommerce',
-    category: 'ecommerce',
-    title: { en: 'Fashion E-commerce', az: 'Moda e-ticarət' },
-    desc: { en: 'Modern storefront with secure checkout and product filters.', az: 'Müasir vitrin, təhlükəsiz ödəniş və məhsul filtrləri.' },
-    image: '/projects/project_fashion_ecommerce_1764939563280.png'
+    slug: 'danyeri-az',
+    category: 'platform',
+    title: { en: 'Danyeri.az', az: 'Danyeri.az' },
+    desc: {
+      en: 'A modern dating platform built for Azerbaijan. Connecting people through meaningful conversations and shared values.',
+      az: 'Azərbaycan üçün müasir tanışlıq platforması. İnsanları mənalı söhbətlər və ortaq dəyərlər vasitəsilə birləşdiririk.'
+    },
+    url: 'https://danyeri.az',
   },
   {
-    slug: 'saas-analytics',
-    category: 'saas',
-    title: { en: 'SaaS Analytics', az: 'SaaS analitika' },
-    desc: { en: 'Insightful dashboards for product metrics and growth.', az: 'Məhsul metrikləri və artım üçün informativ dashboardlar.' },
-    image: '/projects/project_saas_analytics_1764939578111.png'
-  },
-  {
-    slug: 'startup-landing',
-    category: 'landing',
-    title: { en: 'Startup Landing', az: 'Startap landing' },
-    desc: { en: 'Conversion-focused landing with social proof.', az: 'Sosial sübutlarla konversiyaya yönəlmiş landing.' },
-    image: '/projects/project_startup_landing_1764939595070.png'
-  },
-  {
-    slug: 'restaurant-website',
-    category: 'web',
-    title: { en: 'Restaurant Website', az: 'Restoran saytı' },
-    desc: { en: 'Menu, booking, and brand presence for a local venue.', az: 'Yerli məkan üçün menyu, rezervasiya və brend təqdimatı.' },
-    image: '/projects/project_restaurant_1764939609469.png'
+    slug: 'techturk-az',
+    category: 'platform',
+    title: { en: 'TechTurk.az', az: 'TechTurk.az' },
+    desc: {
+      en: 'Azerbaijan\'s tech news and innovation hub. Covering startups, technology trends, and the local tech ecosystem.',
+      az: 'Azərbaycanın texnologiya xəbərləri və innovasiya mərkəzi. Startaplar, texnologiya trendləri və yerli texno-ekosistemin işıqlandırılması.'
+    },
+    url: 'https://techturk.az',
   },
 ]

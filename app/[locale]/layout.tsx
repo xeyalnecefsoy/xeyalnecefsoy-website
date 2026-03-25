@@ -15,16 +15,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   
   return {
     title: {
-      default: `${translations.common.brand} | Creative Specialist & FullStack Developer`,
+      default: `${translations.common.brand} | Qurucu`,
       template: `%s | ${translations.common.brand}`,
     },
     description: translations.home.heroDesc,
-    keywords: ['Xəyal Nəcəfsoy', 'Khayal Najafsoy', 'Web Developer', 'Front-end Developer', 'FullStack Developer', 'Veb saytların hazırlanması', 'Bakı', 'Azerbaijan', 'Portfolio'],
+    keywords: ['Xəyal Nəcəfsoy', 'Khayal Najafsoy', 'Founder', 'Qurucu', 'Bitig.az', 'Danyeri.az', 'TechTurk.az', 'Azerbaijan', 'Startup'],
     authors: [{ name: 'Xəyal Nəcəfsoy', url: 'https://xeyalnecefsoy.com' }],
     creator: 'Xəyal Nəcəfsoy',
     metadataBase: new URL('https://xeyalnecefsoy.com'),
     openGraph: {
-      title: `${translations.common.brand} | Creative Specialist & FullStack Developer`,
+      title: `${translations.common.brand} | Qurucu`,
       description: translations.home.heroDesc,
       url: `https://xeyalnecefsoy.com/${locale}`,
       siteName: translations.common.brand,
@@ -47,8 +47,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale: paramLocale } = await params
   const locale = locales.includes(paramLocale as Locale) ? (paramLocale as Locale) : 'az'
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body suppressHydrationWarning className="min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100 flex flex-col">
+    <html lang={locale} className="dark" suppressHydrationWarning>
+      <body suppressHydrationWarning className="min-h-screen bg-black text-gray-100 antialiased flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -59,11 +59,12 @@ export default async function LocaleLayout({ children, params }: { children: Rea
               alternateName: 'Khayal Najafsoy',
               url: 'https://xeyalnecefsoy.com',
               image: 'https://xeyalnecefsoy.com/profile.svg',
-              jobTitle: 'FullStack Developer',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Freelance'
-              },
+              jobTitle: 'Founder & Engineer',
+              worksFor: [
+                { '@type': 'Organization', name: 'Bitig.az', url: 'https://bitig.az' },
+                { '@type': 'Organization', name: 'Danyeri.az', url: 'https://danyeri.az' },
+                { '@type': 'Organization', name: 'TechTurk.az', url: 'https://techturk.az' },
+              ],
               sameAs: [
                 'https://www.linkedin.com/in/xeyalnecefsoy',
                 'https://github.com/xeyalnecefsoy'

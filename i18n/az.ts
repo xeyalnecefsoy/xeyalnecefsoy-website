@@ -18,12 +18,13 @@ export const az: Dictionary = {
     viewPrices: 'Qiymətlərə bax',
   },
   home: {
-    heroTitle: 'Biznesiniz üçün Peşəkar və Müasir Veb Həllər',
-    heroDesc: 'Brendinizi önə çıxaran, ziyarətçiləri müştəriyə çevirən sürətli və keyfiyyətli veb saytlar hazırlayıram.',
+    heroTitle: 'Əhəmiyyətli məhsullar yaradıram.',
+    heroDesc: 'Bitig.az, Danyeri.az və TechTurk.az-ın qurucusu. Azərbaycan cəmiyyətinə xidmət edən rəqəmsal platformalar inşa edirəm.',
     viewServices: 'Xidmətlərə bax',
-    aboutTitle: 'Haqqımda',
-    aboutDesc: 'Xəyal Nəcəfsoy — Kreativ Mütəxəssis | FullStack Developer. Next.js, TypeScript və Tailwind CSS ilə sürətli, əlçatan və gözəl veb təcrübələr yaradıram. Məqsədim möhkəm mühəndisliyi düşünülmüş dizaynla birləşdirərək biznes nəticələrinizi yaxşılaşdırmaqdır.',
-    moreAboutMe: 'Haqqımda daha çox',
+    viewProjects: 'Layihələrə bax',
+    aboutTitle: 'Vizyon',
+    aboutDesc: 'Mən real insanlar üçün real problemləri həll edən məhsullar qurmağa inanıram. Yaratdığım hər platform bir missiya ilə hərəkət edir — Azərbaycan cəmiyyətini müasir rəqəmsal vasitələrlə gücləndirmək. Bitig.az-da ədəbi mirasımızı qorumaqdan tutmuş, Danyeri.az-da insanları birləşdirməyə və TechTurk.az-da innovasiyanı işıqlandırmağa qədər, işim kod deyil, təsir ilə müəyyən olunur.',
+    moreAboutMe: 'Haqqımda',
     skills: 'İstifadə etdiyim texnologiyalar',
     services: 'Xidmətlər',
     servicesDesc: 'İdeyaları qabaqcıl texnologiyalarla rəqəmsal reallığa çevirirəm.',
@@ -32,7 +33,7 @@ export const az: Dictionary = {
     blog: 'Bloq',
     viewAll: 'Hamısına bax',
     contact: 'Əlaqə',
-    contactDesc: 'Layihənizi müzakirə etmək üçün yazın. Hər zaman yeni ideyalara açığam.',
+    contactDesc: 'Qurmağa dəyər bir ideyamız var? Gəlin danışaq.',
     letstalk: 'Gəlin danışaq',
     form: {
       name: 'Ad',
@@ -52,16 +53,16 @@ export const az: Dictionary = {
       seo: 'SEO Optimizasiyası',
       performance: 'Yüksək Performans'
     },
-    premiumSolutions: 'Premium Veb Həlləri',
+    premiumSolutions: 'Qurucu',
     stats: {
-      frontend: 'Frontend',
-      frontendDesc: 'Müasir & Responsiv',
-      backend: 'Backend',
-      backendDesc: 'Miqyaslanan & Təhlükəsiz',
-      design: 'Dizayn',
-      designDesc: 'Təmiz & Estetik',
-      strategy: 'Strategiya',
-      strategyDesc: 'İnkişaf yönümlü'
+      frontend: 'Bitig.az',
+      frontendDesc: 'Dil & Ədəbiyyat',
+      backend: 'Danyeri.az',
+      backendDesc: 'Tanışlıq Platforması',
+      design: 'TechTurk.az',
+      designDesc: 'Texnologiya Xəbərləri',
+      strategy: 'Vizyon',
+      strategyDesc: 'Təsir yönümlü'
     },
     serviceItems: {
       webDev: 'Veb İnkişafı',
@@ -75,9 +76,9 @@ export const az: Dictionary = {
   },
   services: {
     title: 'Xidmətlər',
-    description: 'Fikirdən yayıma qədər: dizayn, inkişaf və optimizasiya ilə sürətli, gözəl və effektiv veb məhsullar hazırlayıram.',
+    description: 'Sürətli, gözəl və effektiv veb məhsullar hazırlayıram.',
     discover: 'Kəşf',
-    discoverText: 'Məqsədlər, istifadəçilər və çərçivəni qısa workshop-la müəyyən edirik.',
+    discoverText: 'Məqsədlər, istifadəçilər və çərçivəni müəyyən edirik.',
     designBuild: 'Dizayn və İnkişaf',
     designBuildText: 'Design system + Next.js, TS, Tailwind ilə implementasiya.',
     launchOptimize: 'Yayım və Optimizasiya',
@@ -95,24 +96,24 @@ export const az: Dictionary = {
       saas: { title: 'SaaS Dashboardlar', desc: 'Məlumat yönümlü, sürətli idarəetmə panelləri.' },
       landing: { title: 'Landing səhifələr', desc: 'Konversiyaya yönəlmiş səhifələr.' },
       law: { title: 'Hüquq biznesi', desc: 'Hüquq firmaları üçün etibarı artıran saytlər.' },
-      webDesign: { title: 'Veb Dizayn', desc: 'İstifadə rahatlığına fokuslanan təmiz, müasir UI.' },
-      devOpt: { title: 'İnkişaf və Optimizasiya', desc: 'Next.js, TypeScript, SEO üzrə ən yaxşı təcrübələr.' }
+      webDesign: { title: 'Veb Dizayn', desc: 'Təmiz, müasir UI.' },
+      devOpt: { title: 'İnkişaf və Optimizasiya', desc: 'Next.js, TypeScript, SEO.' }
     },
     pricing: {
       title: 'Qiymətlər',
-      subtitle: 'Tipik tələblər üçün şəffaf paketlər. Fərdi təkliflər mümkündür.',
+      subtitle: 'Şəffaf paketlər.',
       tiers: {
-        basic: { name: 'Basic', price: '$399', desc: '1 səhifə landing, responsiv, əsas SEO.' },
-        standard: { name: 'Standard', price: '$999', desc: '5 səhifəyə qədər, CMS hazır, on-page SEO.' },
-        premium: { name: 'Premium', price: '$1999', desc: 'Fərdi dizayn, inteqrasiyalar, performans və analitika.' }
+        basic: { name: 'Basic', price: '$399', desc: '1 səhifə landing, responsiv.' },
+        standard: { name: 'Standard', price: '$999', desc: '5 səhifəyə qədər, CMS hazır.' },
+        premium: { name: 'Premium', price: '$1999', desc: 'Fərdi dizayn, inteqrasiyalar.' }
       },
       getStarted: 'Başla'
     },
     whatIOffer: 'Təklif etdiklərim',
-    offerDesc: 'Biznes ehtiyaclarınıza uyğunlaşdırılmış xüsusi xidmətlər',
+    offerDesc: 'Xüsusi xidmətlər',
     viewDetails: 'Ətraflı bax',
     howItWorks: 'Necə İşləyir',
-    howItWorksDesc: 'İdeyadan yayıma qədər sadə, şəffaf proses',
+    howItWorksDesc: 'İdeyadan yayıma qədər proses',
     whyWorkWithMe: 'Niyə Məni Seçməlisiniz',
     benefits: {
       fastTurnaround: 'Sürətli Təhvil',
@@ -125,7 +126,7 @@ export const az: Dictionary = {
   },
   projects: {
     title: 'Layihələr',
-    subtitle: 'Son işlərimə nəzər salın və bizneslərin böyüməsinə necə kömək etdiyimi görün.',
+    subtitle: 'Azərbaycan cəmiyyətinə xidmət etmək üçün qurduğum platformalar.',
     categories: {
       all: 'Hamısı',
       web: 'Saytlar',
@@ -133,7 +134,7 @@ export const az: Dictionary = {
       saas: 'SaaS',
       landing: 'Landing səhifələr'
     },
-    viewCaseStudy: 'Case Study',
+    viewCaseStudy: 'Layihəyə bax',
     noPreview: 'Görüntü yoxdur',
     filter: 'Filtr'
   }
